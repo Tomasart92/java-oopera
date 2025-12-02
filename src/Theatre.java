@@ -38,5 +38,6 @@ public class Theatre {
         musiccalDrama.printDetails();
         ballet.printActors();
         musiccalDrama.printDetails();
+        drama.printDirector();
     }
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Ballet extends MusicalShow { //Класс наследник от MusicalShow с переменной Хореограф
 
-
     private String choreographer;
 
     public Ballet(String title, int duration, Director director, ArrayList<Actor> listOfActors, String musicAuthor, //конструктор класса

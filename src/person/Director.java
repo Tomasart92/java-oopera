@@ -12,4 +12,14 @@ public class Director extends Person {
     public int getNumberOfShows() {
         return numberOfShows;
     }
+
+    @Override
+    public String toString() {
+        return "Director{" +
+                "numberOfShows=" + numberOfShows +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender=" + gender +
+                '}';
+    }
 }

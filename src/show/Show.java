@@ -10,7 +10,7 @@ public class Show {
     protected String title;
     protected int duration;
     protected Director director;
-    ArrayList<Actor> listOfActors;
+    protected ArrayList<Actor> listOfActors;
 
     public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors) {
         this.title = title;
@@ -18,7 +18,6 @@ public class Show {
         this.director = director;
         this.listOfActors = listOfActors;
     }
-
 
     public String getTitle() {
         return title;
@@ -50,4 +49,25 @@ public class Show {
             System.out.println(actor);
         }
     }
+
+    public void printDirector() {
+        System.out.println(director.toString());
+    }
+
+    public void replaceActorBySurname(String surname, Actor newActor) {
+        boolean found = false;
+        for (int i = 0; i < listOfActors.size(); i++) {
+            Actor actor = listOfActors.get(i);
+            if (actor.getSurname().equals(surname)) {
+                listOfActors.set(i, newActor);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Актёр с фамилией " + surname + " не найден в списке.");
+        } else {
+            System.out.println("Актёры с фамилией " + surname + " успешно заменены.");
+        }
+    }
+
 }

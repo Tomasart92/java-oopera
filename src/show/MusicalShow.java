@@ -16,7 +16,6 @@ public class MusicalShow extends Show {
         this.librettoText = librettoText;
     }
 
-
     public String getMusicAuthor() {
         return musicAuthor;
     }
@@ -29,4 +28,3 @@ public class MusicalShow extends Show {
             System.out.println("Текст либретто: " + librettoText);
         }
     }
-

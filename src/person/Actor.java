@@ -1,4 +1,7 @@
 package person;
+
+import java.util.Objects;
+
 // Класс актёров (новая переменная (рост актера))
 public class Actor extends Person {
 
@@ -15,11 +18,21 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Actor{" +
+        return  super.toString() + "Actor{" +
                 "height=" + height +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Actor actor = (Actor) o;
+        return height == actor.height;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), height);
     }
 }

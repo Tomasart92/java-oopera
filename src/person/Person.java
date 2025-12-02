@@ -1,6 +1,8 @@
 package person;
 //Класс родитель для актера и режиссера (с общими полями) ( переменные - имя, фамилия, пол)
 
+import java.util.Objects;
+
 public class Person {
     protected String name;
     protected String surname;
@@ -31,5 +33,17 @@ public class Person {
                 ", surname='" + surname + '\'' +
                 ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && gender == person.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, gender);
     }
 }
