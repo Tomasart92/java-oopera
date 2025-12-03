@@ -51,7 +51,7 @@ public class Show {
     }
 
     public void printDirector() {
-        System.out.println(director.toString());
+        //   System.out.println(director.toString());
     }
 
     public void replaceActorBySurname(String surname, Actor newActor) {
@@ -61,6 +61,9 @@ public class Show {
             if (actor.getSurname().equals(surname)) {
                 listOfActors.set(i, newActor);
                 found = true;
+            } else {
+                System.out.println("Найдено несколько актёров с фамилией " + surname + ". Замена отменена.");
+                return;
             }
         }
         if (!found) {
