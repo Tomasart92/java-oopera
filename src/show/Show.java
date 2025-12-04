@@ -54,7 +54,6 @@ public class Show {
 
     }
 
-
     public void replaceActorBySurname(String surname, Actor newActor) {
         int count = 0;
         for (Actor actor : listOfActors) {
@@ -78,6 +77,4 @@ public class Show {
             System.out.println("Актёр с фамилией " + surname + " не найден в списке.");
         }
     }
-
-
 }
