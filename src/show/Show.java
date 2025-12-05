@@ -51,28 +51,27 @@ public class Show {
     }
 
     public void printDirector() {
-
+        System.out.println(director);
     }
 
     public void replaceActorBySurname(String surname, Actor newActor) {
         int count = 0;
-        for (Actor actor : listOfActors) {
+        int index = -1;
+        for (int i = 0; i < listOfActors.size(); i++) {
+            Actor actor = listOfActors.get(i);
             if (actor.getSurname().equals(surname)) {
                 count++;
+                if (index == -1) {
+                    index = i;
+                }
             }
         }
 
         if (count > 1) {
             System.out.println("Найдено несколько актёров с фамилией " + surname + ". Замена отменена.");
         } else if (count == 1) {
-            for (int i = 0; i < listOfActors.size(); i++) {
-                Actor actor = listOfActors.get(i);
-                if (actor.getSurname().equals(surname)) {
-                    listOfActors.set(i, newActor);
-                    System.out.println("Актёр с фамилией " + surname + " успешно заменён.");
-                    break;
-                }
-            }
+            listOfActors.set(index, newActor);
+            System.out.println("Актёр с фамилией " + surname + " успешно заменён.");
         } else {
             System.out.println("Актёр с фамилией " + surname + " не найден в списке.");
         }
